@@ -1,37 +1,75 @@
-// Learning.java
-// Implicity and explicitly to refer to members of an object.
+import java.util.Arrays;
 
-public class Bookwatch
-{
-public static void main(String[]args)
-{
-SimpleTime time = new SimpleTime(15, 30, 19);
-System.out.println(time.builString() );
-}// end main
-}//end class Bookwatch
-//class SimpleTime demostrates the "this" reference
-class SimpleTime
-{
-private int hour;//0-23
-private int minutes;//0-59
-private int second;//0-59
+class Quicksort {
 
-public SimpleTime (int hour, int minutes, int second)
-{
-this.hour = hour//set "this" object's hour
-this.minutes = minute;///set this object's second
-}//end SimpleTime constructors
+  // method to find the partition position
+  static int partition(int array[], int low, int high) {
+    
+    // choose the rightmost element as pivot
+    int pivot = array[high];
+    
+    // pointer for greater element
+    int i = (low - 1);
 
-//use explicit and implicit "this" to call toUniversalString
-public String builString()
-return String.format("24s:%sn%24s:%s",
-"this.touniversalString()". this.toUniveralString();
-toUniversalString()", to UniversalString());
-}//end method buildString
+    // traverse through all elements
+    // compare each element with pivot
+    for (int j = low; j < high; j++) {
+      if (array[j] <= pivot) {
 
-//convert to String in Unu=iversal - time formart(HH:MM:SS)
-public String toUniversaiString()
-return String.formt("&0.2d:"%0.2d:%0.0d:");
-}//end methos toUniversalString
-}//end class SimpleTime
+        // if element smaller than pivot is found
+        // swap it with the greater element pointed by i
+        i++;
 
+        // swapping element at i with element at j
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+
+    }
+
+22222222222222
+    // swapt the pivot element with the greater element specified by i
+    int temp = array[i + 1];
+    array[i + 1] = array[high];
+    array[high] = temp;
+
+    // return the position from where partition is done
+    return (i + 1);
+  }
+
+  static void quickSort(int array[], int low, int high) {
+    if (low < high) {
+
+      // find pivot element such that
+      // elements smaller than pivot are on the left
+      // elements greater than pivot are on the right
+      int pi = partition(array, low, high);
+      
+      // recursive call on the left of pivot
+      quickSort(array, low, pi - 1);
+
+      // recursive call on the right of pivot
+      quickSort(array, pi + 1, high);
+    }
+  }
+}
+
+333333333333333333333333333
+// Main class
+class Main {
+  public static void main(String args[]) {
+
+    int[] data = { 8, 7, 2, 1, 0, 9, 6 };
+    System.out.println("Unsorted Array");
+    System.out.println(Arrays.toString(data));
+
+    int size = data.length;
+
+    // call quicksort() on array data
+    Quicksort.quickSort(data, 0, size - 1);
+
+    System.out.println("Sorted Array in Ascending Order ");
+    System.out.println(Arrays.toString(data));
+  }
+}
