@@ -9,6 +9,7 @@ since its a race,
 directions will do me some good.
 from Uganda Kampala.
 * I came when i cant even make a screen shot so to be here God has pushed me alot.
-* I can cow push a repo.. still learning tho.
+* I can push a repo.. still learning tho.
 * if u are still laughing, know village is far....... just imagine i cant even post adocument now.. you can teach me something anytime.
 and that will be Great.... 
+Oh i even Know that PR is Pull Requests. 
